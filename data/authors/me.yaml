@@ -1,0 +1,131 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Alvise Dei Rossi
+  given: Alvise
+  family: Dei Rossi
+  alternate: ''
+  pronunciation: ''
+  pronouns: ''
+postnominals: []
+status:
+  icon: ""
+role: PhD Candidate in Informatics
+bio: |
+  Machine learning researcher working on robust generalization for physiological and health data,
+  with sleep as the central application domain.
+
+affiliations:
+  - name: Universita della Svizzera Italiana
+    url: https://www.usi.ch/
+  - name: University of Applied Sciences and Arts of Southern Switzerland
+    url: https://www.supsi.ch/
+
+links:
+  - icon: at-symbol
+    url: mailto:alvise.deirossi@gmail.com
+    label: Email
+  - icon: brands/github
+    url: https://github.com/Vaeliss
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/alvise-dei-rossi-a7b76b19a
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=ziDYtskAAAAJ&hl=it&oi=ao
+
+interests:
+  - Robust machine learning
+  - Physiological time series
+  - Wearable sensing
+  - Sleep and health AI
+  - Multimodal signal fusion
+
+education:
+  - degree: PhD in Informatics
+    institution: Universita della Svizzera Italiana
+    start: 2023-04-01
+    end: null
+    summary: |
+      Research on machine learning modeling under physiological data heterogeneity, with sleep
+      as a central methodological testbed for distribution shift, wearable sensing, multimodal
+      signals, and noisy labels.
+  - degree: MSc in Data Science, Machine Learning for Intelligent Systems
+    institution: University of Padua
+    start: 2020-10-01
+    end: 2022-09-30
+    summary: |
+      Thesis on reinforcement learning approaches for artificial pancreas control. Ranked in
+      the top 5% of the degree program.
+  - degree: BSc in Chemistry
+    institution: Ca' Foscari University of Venice
+    start: null
+    end: null
+
+experience:
+  - role: PhD Candidate
+    org: SUPSI / Universita della Svizzera Italiana
+    start: 2023-04-01
+    end: null
+    summary: |
+      Research on improving the generalization and robustness of machine learning models for
+      physiological signals. Work spans large-scale sleep staging, wearable monitoring,
+      subjective sleep quality, burnout detection, and multimodal physiological signal fusion.
+  - role: Postgraduate Researcher
+    org: University of Padua
+    start: 2022-11-01
+    end: 2023-02-28
+    summary: |
+      Worked on insulin delivery control with SARSA(lambda) reinforcement learning agents,
+      outperforming PID and MPC baselines.
+
+skills:
+  - name: Machine Learning
+    items:
+      - label: Robust generalization
+        level: 5
+      - label: Time-series modeling
+        level: 5
+      - label: Deep learning
+        level: 5
+      - label: Model evaluation
+        level: 5
+  - name: Engineering
+    items:
+      - label: Python
+        level: 5
+      - label: PyTorch
+        level: 5
+      - label: Data pipelines
+        level: 4
+      - label: Open-source releases
+        level: 4
+  - name: Research Domains
+    items:
+      - label: Sleep staging
+        level: 5
+      - label: Wearables
+        level: 5
+      - label: Physiological signals
+        level: 5
+      - label: Health AI
+        level: 4
+
+languages:
+  - name: English
+    level: 5
+    label: Professional
+  - name: Italian
+    level: 5
+    label: Native
+
+awards:
+  - title: Travel Grant
+    awarder: EurIPS 2025, MMRL4H Workshop
+    date: "2025-01-01"
+    summary: Travel grant for the MMRL4H Workshop at EurIPS 2025.
+    icon: hero/trophy
+  - title: Top 5% of degree program
+    awarder: MSc Data Science, University of Padua
+    date: "2022-01-01"
+    summary: Ranked in the top 5% of the MSc degree program.
+    icon: hero/academic-cap
