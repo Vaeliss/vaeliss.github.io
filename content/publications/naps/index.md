@@ -16,11 +16,7 @@ tags:
   - Physiological signals
   - Sleep staging
 featured: true
-links:
-  - name: OpenReview
-    url: https://openreview.net/forum?id=hvdb2DDD0G
-  - name: Workshop PDF
-    url: https://multimodal-rep-learning-for-health.github.io/papers/10_NAP_Attention_Based_Late_Fu.pdf
+links: []
 projects: []
 ---
 

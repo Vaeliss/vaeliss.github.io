@@ -16,9 +16,7 @@ tags:
   - Physiological signals
   - Open source
 featured: true
-links:
-  - name: DOI
-    url: https://doi.org/10.1038/s41746-025-02237-2
+links: []
 projects: []
 ---
 

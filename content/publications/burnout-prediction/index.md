@@ -16,9 +16,7 @@ tags:
   - Wearables
   - Physiological data
 featured: true
-links:
-  - name: DOI
-    url: https://doi.org/10.3389/fdgth.2025.1694666
+links: []
 projects: []
 ---
 
