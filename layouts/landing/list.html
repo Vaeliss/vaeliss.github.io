@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ if .IsHome }}
 {{ $photo := resources.Get "media/alvise-dei-rossi.jpg" }}
 <style>
   :root {
@@ -413,4 +414,7 @@
     });
   })();
 </script>
+{{ else }}
+  {{ partial "landing_page.html" . }}
+{{ end }}
 {{ end }}
