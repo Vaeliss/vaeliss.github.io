@@ -10,13 +10,8 @@
     --adr-accent-2: #9a4f2b;
     --adr-soft: #f6f7f4;
     --adr-panel: #ffffff;
-    --adr-field: #ffffff;
-    --adr-field-text: var(--adr-ink);
-    --adr-field-placeholder: #7a857e;
     --adr-list-line: rgba(216, 224, 218, 0.75);
     --adr-link-underline: rgba(15, 118, 110, 0.35);
-    --adr-button-text: #ffffff;
-    --adr-button-hover: #115e59;
   }
 
   html[data-wc-theme="dark"],
@@ -29,13 +24,8 @@
     --adr-accent-2: #f2b47d;
     --adr-soft: #17211f;
     --adr-panel: #101816;
-    --adr-field: #0c1412;
-    --adr-field-text: #f4faf7;
-    --adr-field-placeholder: #93a59d;
     --adr-list-line: rgba(111, 137, 127, 0.5);
     --adr-link-underline: rgba(94, 234, 212, 0.5);
-    --adr-button-text: #06211d;
-    --adr-button-hover: #7cf5df;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -49,13 +39,8 @@
       --adr-accent-2: #f2b47d;
       --adr-soft: #17211f;
       --adr-panel: #101816;
-      --adr-field: #0c1412;
-      --adr-field-text: #f4faf7;
-      --adr-field-placeholder: #93a59d;
       --adr-list-line: rgba(111, 137, 127, 0.5);
       --adr-link-underline: rgba(94, 234, 212, 0.5);
-      --adr-button-text: #06211d;
-      --adr-button-hover: #7cf5df;
     }
   }
 
@@ -112,6 +97,28 @@
     color: var(--adr-muted);
     font-size: 0.96rem;
     line-height: 1.5;
+  }
+
+  .adr-meta a {
+    color: var(--adr-muted);
+    text-decoration: none;
+  }
+
+  .adr-meta a:hover,
+  .adr-meta a:focus-visible {
+    color: var(--adr-accent);
+  }
+
+  .adr-place {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .adr-place svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 auto;
   }
 
   .adr-links {
@@ -196,7 +203,7 @@
 
   .adr-list li {
     display: grid;
-    grid-template-columns: 92px minmax(0, 1fr);
+    grid-template-columns: 138px minmax(0, 1fr);
     gap: 18px;
     padding: 11px 0;
     border-top: 1px solid var(--adr-list-line);
@@ -211,6 +218,16 @@
 
   .adr-item-title {
     font-weight: 700;
+  }
+
+  .adr-authors {
+    display: block;
+    margin-top: 4px;
+    color: var(--adr-muted);
+  }
+
+  .adr-authors strong {
+    color: var(--adr-ink);
   }
 
   .adr-item-title a {
@@ -259,53 +276,6 @@
     padding: 22px;
   }
 
-  .adr-form {
-    display: grid;
-    gap: 14px;
-    margin-top: 18px;
-  }
-
-  .adr-form label {
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
-
-  .adr-form input,
-  .adr-form textarea {
-    width: 100%;
-    border: 1px solid var(--adr-line);
-    border-radius: 6px;
-    padding: 11px 12px;
-    background: var(--adr-field);
-    color: var(--adr-field-text);
-  }
-
-  .adr-form textarea {
-    min-height: 130px;
-    resize: vertical;
-  }
-
-  .adr-form button {
-    justify-self: start;
-    border: 0;
-    border-radius: 6px;
-    padding: 11px 16px;
-    background: var(--adr-accent);
-    color: var(--adr-button-text);
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .adr-form button:hover,
-  .adr-form button:focus-visible {
-    background: var(--adr-button-hover);
-  }
-
-  .adr-form input::placeholder,
-  .adr-form textarea::placeholder {
-    color: var(--adr-field-placeholder);
-  }
-
   @media (max-width: 860px) {
     .adr-page {
       padding: 36px 20px 64px;
@@ -347,9 +317,17 @@
       <h1 class="adr-name">Alvise Dei Rossi</h1>
       <p class="adr-role">PhD Candidate in Informatics<br>Machine learning for physiological time series</p>
       <ul class="adr-meta">
-        <li>Universita della Svizzera Italiana</li>
-        <li>SUPSI</li>
-        <li>Lugano, Switzerland</li>
+        <li><a href="https://www.usi.ch/en">Universita della Svizzera italiana</a></li>
+        <li><a href="https://www.supsi.ch/en">SUPSI</a></li>
+        <li>
+          <a class="adr-place" href="https://www.google.com/maps/search/?api=1&query=Campus+Est+USI+SUPSI+Lugano" aria-label="Campus Est USI SUPSI in Lugano">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Lugano, Switzerland
+          </a>
+        </li>
       </ul>
       <nav class="adr-links" aria-label="Profile links">
         <a class="adr-link" href="mailto:alvise.deirossi@gmail.com" aria-label="Email Alvise Dei Rossi">
@@ -380,26 +358,41 @@
       <section class="adr-section" id="about">
         <h2>About</h2>
         <p class="adr-lede">I am a PhD candidate working on robust machine learning for physiological and health data, with sleep as the main application domain.</p>
-        <p>My research studies models under real-world heterogeneity: subject variability, device differences, dataset shifts, multimodal sensing constraints, and noisy labels. The broader goal is to build health AI systems that can be evaluated fairly and transferred across data sources.</p>
-        <p>I am interested in future R&D roles around wearable sensing, physiological time series, robust generalization, multimodal modeling, and research-to-code execution.</p>
-      </section>
-
-      <section class="adr-section" id="news">
-        <h2>News</h2>
-        <ul class="adr-list">
-          <li><span class="adr-tag">2026</span><span>Preparing a public personal website for post-PhD academic and industrial R&D applications.</span></li>
-          <li><span class="adr-tag">2025</span><span>Travel grant for EurIPS 2025, MMRL4H Workshop.</span></li>
-          <li><span class="adr-tag">2023-present</span><span>PhD research on robust physiological signal modeling at USI and SUPSI.</span></li>
-        </ul>
+        <p>My research studies machine learning models under real-world heterogeneity: subject variability, device differences, dataset shifts, multimodal sensing constraints, and noisy labels. The broader goal is to build health AI systems that can be evaluated fairly and applied beyond the research prototype stage.</p>
+        <p>I am interested in R&D roles around wearable sensing, physiological time series, robust generalization, multimodal modeling, and research-to-code execution.</p>
       </section>
 
       <section class="adr-section" id="publications">
         <h2>Selected Publications</h2>
         <ul class="adr-list">
-          <li><span class="adr-tag">npj Digital Medicine</span><span><span class="adr-item-title">SLEEPYLAND: an open-source framework and model suite for fair evaluation of automatic sleep staging algorithms.</span> First-author peer-reviewed work.</span></li>
-          <li><span class="adr-tag">Wearables</span><span><span class="adr-item-title">Unobtrusive perceived sleep quality monitoring in free-living conditions.</span> Wearable and self-report modeling with subject-wise validation.</span></li>
-          <li><span class="adr-tag">Multimodal</span><span><span class="adr-item-title">NAPS: attention-based fusion of heterogeneous physiological signals.</span> Adaptive aggregation for variable sensor configurations.</span></li>
-          <li><span class="adr-tag">Health AI</span><span><span class="adr-item-title">Burnout prediction using passive physiological data and wearable trajectories.</span> Physiological risk monitoring for work-related stress disorder research.</span></li>
+          <li>
+            <span class="adr-tag">npj Digital Medicine</span>
+            <span>
+              <span class="adr-item-title"><a href="https://doi.org/10.1038/s41746-025-02237-2">SLEEPYLAND: trust begins with fair evaluation of automatic sleep staging models</a></span>
+              <span class="adr-authors"><strong>Dei Rossi, A.</strong>, Metaldi, M., Bechny, M., Filchenko, I., van der Meer, J., Schmidt, M. H., Bassetti, C. L. A., Tzovara, A., Faraci, F. D., and Fiorillo, L.</span>
+            </span>
+          </li>
+          <li>
+            <span class="adr-tag">IMWUT/UbiComp</span>
+            <span>
+              <span class="adr-item-title"><a href="https://doi.org/10.1145/3749502">Unobtrusive perceived sleep quality monitoring in the wild</a></span>
+              <span class="adr-authors"><strong>Dei Rossi, A.</strong>, Marzorati, D., Gerosa, T., Svihrova, R., Santini, S., and Faraci, F.</span>
+            </span>
+          </li>
+          <li>
+            <span class="adr-tag">EurIPS25 MMRL4H</span>
+            <span>
+              <span class="adr-item-title"><a href="https://openreview.net/forum?id=hvdb2DDD0G">NAP: attention-based late fusion for automatic sleep staging</a></span>
+              <span class="adr-authors"><strong>Dei Rossi, A.</strong>, van der Meer, J., Schmidt, M. H., Bassetti, C. L. A., Fiorillo, L., and Faraci, F. D.</span>
+            </span>
+          </li>
+          <li>
+            <span class="adr-tag">Frontiers Digital Health</span>
+            <span>
+              <span class="adr-item-title"><a href="https://doi.org/10.3389/fdgth.2025.1694666">Climbing the ladder: a ranking approach to burnout prediction</a></span>
+              <span class="adr-authors"><strong>Dei Rossi, A.</strong>, Marzorati, D., Svihrova, R., Grossenbacher, J., Kochergin, V., Grossenbacher, M., and Faraci, F.</span>
+            </span>
+          </li>
         </ul>
       </section>
 
@@ -436,44 +429,19 @@
       <section class="adr-section" id="service">
         <h2>Teaching and Service</h2>
         <p>Teaching assistant for Deep Learning and Machine Learning courses serving 300+ students. Co-supervised 2 MSc and 4 BSc theses.</p>
-        <p>Reviewer for npj Digital Medicine, ICML, IEEE BHI, ACM IMWUT, and additional journals and conferences.</p>
+        <p>Reviewer for npj Digital Medicine, TMLR, IEEE Journal of Biomedical and Health Informatics (J-BHI), ACM IMWUT, and ICML, where I was recognized among the top 25% of reviewers.</p>
       </section>
 
       <section class="adr-section" id="contact">
         <h2>Contact</h2>
         <div class="adr-contact">
-          <p>For professional contact, write to <a href="mailto:alvise.deirossi@gmail.com">alvise.deirossi@gmail.com</a> or use the quick message form below.</p>
-          <form class="adr-form" id="adr-contact-form">
-            <label for="adr-name">Name</label>
-            <input id="adr-name" name="name" autocomplete="name" required>
-            <label for="adr-email">Email</label>
-            <input id="adr-email" name="email" type="email" autocomplete="email" required>
-            <label for="adr-message">Message</label>
-            <textarea id="adr-message" name="message" required></textarea>
-            <button type="submit">Send message</button>
-          </form>
-          <p class="adr-muted">This opens your email client with a prefilled message. A hosted form endpoint can be added later if needed.</p>
+          <p>The best way to reach me is by email at <a href="mailto:alvise.deirossi@gmail.com">alvise.deirossi@gmail.com</a>.</p>
         </div>
       </section>
     </div>
   </div>
 </main>
 
-<script>
-  (function () {
-    var form = document.getElementById('adr-contact-form');
-    if (!form) return;
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      var name = document.getElementById('adr-name').value.trim();
-      var email = document.getElementById('adr-email').value.trim();
-      var message = document.getElementById('adr-message').value.trim();
-      var subject = 'Website message from ' + (name || 'visitor');
-      var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
-      window.location.href = 'mailto:alvise.deirossi@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    });
-  })();
-</script>
 {{ else }}
   {{ partial "landing_page.html" . }}
 {{ end }}
