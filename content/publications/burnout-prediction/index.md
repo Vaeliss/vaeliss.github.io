@@ -14,8 +14,7 @@ tags:
   - Physiological data
 featured: true
 links: []
-projects:
-  - burnout-prediction
+projects: []
 ---
 
 Selected first-author work. Full citation metadata and BibTeX will be added later.

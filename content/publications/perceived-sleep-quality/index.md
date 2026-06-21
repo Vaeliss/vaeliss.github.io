@@ -14,8 +14,7 @@ tags:
   - Health AI
 featured: true
 links: []
-projects:
-  - perceived-sleep-quality
+projects: []
 ---
 
 Selected first-author work. Full citation metadata and BibTeX will be added later.

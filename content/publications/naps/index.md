@@ -14,8 +14,7 @@ tags:
   - Sleep staging
 featured: true
 links: []
-projects:
-  - naps
+projects: []
 ---
 
 Selected first-author work. Full citation metadata and BibTeX will be added later.

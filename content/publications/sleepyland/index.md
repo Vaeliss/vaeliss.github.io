@@ -17,8 +17,7 @@ tags:
   - Open source
 featured: true
 links: []
-projects:
-  - sleepyland
+projects: []
 ---
 
 Selected first-author publication. Full citation metadata and BibTeX will be added later.
