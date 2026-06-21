@@ -3,6 +3,7 @@ title: "Climbing the ladder: a ranking approach to burnout prediction"
 authors:
   - me
 date: 2026-06-04
+draft: true
 publication_types: ['paper-conference']
 publication:
   name: "Frontiers in Digital Health"
@@ -15,7 +16,7 @@ tags:
   - Burnout
   - Wearables
   - Physiological data
-featured: true
+featured: false
 links: []
 projects: []
 ---
