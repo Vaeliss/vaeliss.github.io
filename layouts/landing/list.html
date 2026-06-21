@@ -1,10 +1,13 @@
 {{ define "main" }}
 {{ if .IsHome }}
 {{ $photo := resources.Get "media/alvise-dei-rossi.jpg" }}
-{{ $sleepyLogo := resources.Get "media/sleepyland-logo-white.png" }}
+{{ $sleepyMark := resources.Get "media/sleepyland-mark.png" }}
 {{ $sleepyDemo := resources.Get "media/sleepyland-quickstart-results.gif" }}
 <style>
-  :root {
+  .adr-page,
+  html[data-wc-theme="light"] .adr-page,
+  html[data-theme="light"] .adr-page,
+  html.light .adr-page {
     --adr-ink: #16201d;
     --adr-muted: #647067;
     --adr-line: #d8e0da;
@@ -16,9 +19,9 @@
     --adr-link-underline: rgba(15, 118, 110, 0.35);
   }
 
-  html[data-wc-theme="dark"],
-  html[data-theme="dark"],
-  html.dark {
+  html[data-wc-theme="dark"] .adr-page,
+  html[data-theme="dark"] .adr-page,
+  html.dark .adr-page {
     --adr-ink: #edf6f2;
     --adr-muted: #b8c8c0;
     --adr-line: #3a514b;
@@ -31,9 +34,8 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    html[data-wc-theme-default="system"],
-    html:not([data-wc-theme]),
-    :root:not([data-wc-theme]) {
+    html[data-wc-theme-default="system"]:not([data-wc-theme="light"]):not([data-theme="light"]):not(.light) .adr-page,
+    html[data-theme="system"]:not([data-wc-theme="light"]):not([data-theme="light"]):not(.light) .adr-page {
       --adr-ink: #edf6f2;
       --adr-muted: #b8c8c0;
       --adr-line: #3a514b;
@@ -255,11 +257,26 @@
     border-bottom: 1px solid var(--adr-line);
   }
 
-  .adr-sleepy-logo {
-    width: min(240px, 70%);
-    height: auto;
-    display: block;
+  .adr-sleepy-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
     margin: 0 0 16px;
+  }
+
+  .adr-sleepy-mark {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    flex: 0 0 auto;
+  }
+
+  .adr-sleepy-word {
+    color: #f8fbf8;
+    font-size: 1.32rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
   }
 
   .adr-demo {
@@ -464,19 +481,14 @@
         </ul>
       </section>
 
-      <section class="adr-section" id="experience">
-        <h2>Research Experience</h2>
-        <ul class="adr-list">
-          <li><span class="adr-tag">2023-present</span><span><span class="adr-item-title">PhD Candidate, USI / SUPSI.</span> Reliable generalization for physiological signals, large-scale sleep staging, wearable monitoring, subjective sleep quality, burnout detection, and multimodal signal fusion.</span></li>
-          <li><span class="adr-tag">2022-2023</span><span><span class="adr-item-title">Postgraduate Researcher, University of Padua.</span> Reinforcement learning for artificial pancreas control with SARSA(λ) agents.</span></li>
-        </ul>
-      </section>
-
-      <section class="adr-section" id="projects">
-        <h2>Featured Project</h2>
+      <section class="adr-section" id="featured">
+        <h2>Featured</h2>
         <article class="adr-spotlight">
           <div class="adr-spotlight-media">
-            {{ with $sleepyLogo }}<img class="adr-sleepy-logo" src="{{ .RelPermalink }}" alt="SLEEPYLAND">{{ end }}
+            <div class="adr-sleepy-brand" aria-label="SLEEPYLAND">
+              {{ with $sleepyMark }}<img class="adr-sleepy-mark" src="{{ .RelPermalink }}" alt="" aria-hidden="true">{{ end }}
+              <span class="adr-sleepy-word">SLEEPYLAND</span>
+            </div>
             {{ with $sleepyDemo }}<img class="adr-demo" src="{{ .RelPermalink }}" alt="SLEEPYLAND quickstart showing hypnograms, hypnodensity, and performance results" loading="lazy">{{ end }}
           </div>
           <div class="adr-spotlight-body">
@@ -499,6 +511,14 @@
             </div>
           </div>
         </article>
+      </section>
+
+      <section class="adr-section" id="experience">
+        <h2>Research Experience</h2>
+        <ul class="adr-list">
+          <li><span class="adr-tag">2023-present</span><span><span class="adr-item-title">PhD Candidate, USI / SUPSI.</span> Reliable generalization for physiological signals, large-scale sleep staging, wearable monitoring, subjective sleep quality, burnout detection, and multimodal signal fusion.</span></li>
+          <li><span class="adr-tag">2022-2023</span><span><span class="adr-item-title">Postgraduate Researcher, University of Padua.</span> Reinforcement learning for artificial pancreas control with SARSA(λ) agents.</span></li>
+        </ul>
       </section>
 
       <section class="adr-section" id="service">
