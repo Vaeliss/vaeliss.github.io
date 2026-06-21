@@ -7,7 +7,7 @@ sections:
   - block: collection
     content:
       title: Selected Projects
-      text: Research and engineering work around robust physiological time-series modeling, sleep, wearables, and health AI.
+      text: Research and engineering work around physiological time-series modeling, sleep, wearables, reliable generalization, and health AI.
       filters:
         folders:
           - projects

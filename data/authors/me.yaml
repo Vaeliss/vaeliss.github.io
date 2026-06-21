@@ -13,7 +13,7 @@ status:
   icon: ""
 role: PhD Candidate in Informatics
 bio: |
-  Machine learning researcher working on robust generalization for physiological and health data,
+  Machine learning researcher working on reliable generalization for physiological and health data,
   with sleep as the central application domain.
 
 affiliations:
@@ -34,7 +34,7 @@ links:
     url: https://scholar.google.com/citations?user=ziDYtskAAAAJ&hl=it&oi=ao
 
 interests:
-  - Robust machine learning
+  - Generalization under dataset shift
   - Physiological time series
   - Wearable sensing
   - Sleep and health AI
@@ -67,7 +67,7 @@ experience:
     start: 2023-04-01
     end: null
     summary: |
-      Research on improving the generalization and robustness of machine learning models for
+      Research on improving the generalization and reliability of machine learning models for
       physiological signals. Work spans large-scale sleep staging, wearable monitoring,
       subjective sleep quality, burnout detection, and multimodal physiological signal fusion.
   - role: Postgraduate Researcher
@@ -75,13 +75,13 @@ experience:
     start: 2022-11-01
     end: 2023-02-28
     summary: |
-      Worked on insulin delivery control with SARSA(lambda) reinforcement learning agents,
+      Worked on insulin delivery control with SARSA(λ) reinforcement learning agents,
       outperforming PID and MPC baselines.
 
 skills:
   - name: Machine Learning
     items:
-      - label: Robust generalization
+      - label: Generalization under shift
         level: 5
       - label: Time-series modeling
         level: 5

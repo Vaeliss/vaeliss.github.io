@@ -1,15 +1,15 @@
 main:
   - name: Bio
-    url: /
+    url: /#about
     weight: 10
-  - name: Projects
-    url: /#projects
-    weight: 20
   - name: Publications
     url: /#publications
-    weight: 30
+    weight: 20
   - name: Experience
-    url: experience/
+    url: /#experience
+    weight: 30
+  - name: Project
+    url: /#projects
     weight: 40
   - name: Contact
     url: /#contact

@@ -2,7 +2,7 @@
 
 Personal website for future job applications, built from the HugoBlox Academic CV template.
 
-The first version is optimized for industry R&D roles after the PhD, especially work around robust machine learning, physiological time series, wearable sensing, sleep, and health AI. Academic credibility remains visible through selected publications, projects, teaching, supervision, and reviewing service.
+The first version is optimized for industry R&D roles after the PhD, especially work around machine learning for physiological time series, wearable sensing, sleep, reliable generalization, and health AI. Academic credibility remains visible through selected publications, projects, teaching, supervision, and reviewing service.
 
 ## Main Workflow
 

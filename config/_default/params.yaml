@@ -5,8 +5,8 @@ hugoblox:
     name: "Alvise Dei Rossi"
     organization: ""
     type: person
-    tagline: "Robust machine learning for physiological data"
-    description: "Personal website of Alvise Dei Rossi, PhD candidate working on robust machine learning for physiological time series, sleep, wearables, and health AI."
+    tagline: "Machine learning for physiological data that generalizes"
+    description: "Personal website of Alvise Dei Rossi, PhD candidate at USI working on machine learning for physiological time series, sleep, wearables, and health AI."
     social:
       twitter: ""
 
