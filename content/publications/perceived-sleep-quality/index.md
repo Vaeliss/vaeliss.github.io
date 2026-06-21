@@ -1,9 +1,12 @@
 ---
-title: "Unobtrusive perceived sleep quality monitoring in free-living conditions"
+title: "Unobtrusive perceived sleep quality monitoring in the wild"
 authors:
   - me
 date: 2026-06-04
 publication_types: ['paper-conference']
+publication:
+  name: "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies"
+  short_name: "IMWUT/UbiComp"
 peer_reviewed: true
 open_access: false
 summary: "Wearable and self-report modeling for perceived sleep quality monitoring outside laboratory settings."
@@ -13,7 +16,9 @@ tags:
   - Sleep quality
   - Health AI
 featured: true
-links: []
+links:
+  - name: DOI
+    url: https://doi.org/10.1145/3749502
 projects: []
 ---
 

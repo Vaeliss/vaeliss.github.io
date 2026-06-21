@@ -42,7 +42,7 @@ hugoblox:
     style: navbar
     sticky: true
     align: center
-    search: true
+    search: false
     theme_toggle: true
     theme_picker: false
     language_switcher: false
@@ -95,12 +95,8 @@ hugoblox:
       style: apa
 
   search:
-    enable: true
-    suggestions:
-      - "SLEEPYLAND"
-      - "wearable sensing"
-      - "sleep staging"
-      - "robust generalization"
+    enable: false
+    suggestions: []
     quick_actions: []
 
   comments:

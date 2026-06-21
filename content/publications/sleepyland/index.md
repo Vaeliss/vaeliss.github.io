@@ -1,5 +1,5 @@
 ---
-title: "SLEEPYLAND: an open-source framework and model suite for fair evaluation of automatic sleep staging algorithms"
+title: "SLEEPYLAND: trust begins with fair evaluation of automatic sleep staging models"
 authors:
   - me
 date: 2026-06-04
@@ -16,7 +16,9 @@ tags:
   - Physiological signals
   - Open source
 featured: true
-links: []
+links:
+  - name: DOI
+    url: https://doi.org/10.1038/s41746-025-02237-2
 projects: []
 ---
 

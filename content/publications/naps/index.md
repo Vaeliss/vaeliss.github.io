@@ -1,9 +1,12 @@
 ---
-title: "NAPS: attention-based fusion of heterogeneous physiological signals for automatic sleep staging"
+title: "NAP: attention-based late fusion for automatic sleep staging"
 authors:
   - me
 date: 2026-06-04
 publication_types: ['paper-conference']
+publication:
+  name: "MMRL4H Workshop @ EurIPS"
+  short_name: "EurIPS25 MMRL4H"
 peer_reviewed: true
 open_access: false
 summary: "Attention-based multimodal fusion for variable physiological sensor configurations."
@@ -13,7 +16,11 @@ tags:
   - Physiological signals
   - Sleep staging
 featured: true
-links: []
+links:
+  - name: OpenReview
+    url: https://openreview.net/forum?id=hvdb2DDD0G
+  - name: Workshop PDF
+    url: https://multimodal-rep-learning-for-health.github.io/papers/10_NAP_Attention_Based_Late_Fu.pdf
 projects: []
 ---
 

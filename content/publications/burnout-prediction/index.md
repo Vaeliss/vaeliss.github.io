@@ -1,9 +1,12 @@
 ---
-title: "Burnout prediction using passive physiological data and wearable trajectories"
+title: "Climbing the ladder: a ranking approach to burnout prediction"
 authors:
   - me
 date: 2026-06-04
 publication_types: ['paper-conference']
+publication:
+  name: "Frontiers in Digital Health"
+  short_name: "Frontiers Digital Health"
 peer_reviewed: true
 open_access: false
 summary: "Modeling burnout severity from wearable trajectories and contextual information."
@@ -13,7 +16,9 @@ tags:
   - Wearables
   - Physiological data
 featured: true
-links: []
+links:
+  - name: DOI
+    url: https://doi.org/10.3389/fdgth.2025.1694666
 projects: []
 ---
 
