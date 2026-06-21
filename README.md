@@ -35,10 +35,16 @@ Local builds are useful for fast preview, but they are not required for deployme
 
 ## Deployment
 
-The intended deployment target is GitHub Pages from the private source repository:
+The intended deployment target is GitHub Pages from the user-site repository:
 
 ```text
-https://github.com/Vaeliss/job_applications_website.git
+https://github.com/Vaeliss/vaeliss.github.io.git
+```
+
+The public site URL is:
+
+```text
+https://vaeliss.github.io/
 ```
 
 Once GitHub Pages is enabled, the rendered site will be public even if the source repository remains private.
