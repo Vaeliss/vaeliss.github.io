@@ -54,7 +54,7 @@ hugoblox:
   footer:
     style: minimal
     language_switcher: false
-    text: "Source repository is private. Rendered site may be public through GitHub Pages."
+    text: ""
 
   copyright:
     notice: "Copyright {year} {name}."
@@ -157,5 +157,5 @@ hugoblox:
     export_logs: true
 
   pro:
-    hide_attribution: false
+    hide_attribution: true
     affiliate_code: ""

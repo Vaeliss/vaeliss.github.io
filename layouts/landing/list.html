@@ -4,10 +4,11 @@
 {{ $sleepyMark := resources.Get "media/sleepyland-mark.png" }}
 {{ $sleepyDemo := resources.Get "media/sleepyland-quickstart-results.gif" }}
 <style>
-  .adr-page,
-  html[data-wc-theme="light"] .adr-page,
-  html[data-theme="light"] .adr-page,
-  html.light .adr-page {
+  .navbar-brand {
+    display: none;
+  }
+
+  .adr-page {
     --adr-ink: #16201d;
     --adr-muted: #647067;
     --adr-line: #d8e0da;
@@ -19,8 +20,6 @@
     --adr-link-underline: rgba(15, 118, 110, 0.35);
   }
 
-  html[data-wc-theme="dark"] .adr-page,
-  html[data-theme="dark"] .adr-page,
   html.dark .adr-page {
     --adr-ink: #edf6f2;
     --adr-muted: #b8c8c0;
@@ -31,21 +30,6 @@
     --adr-panel: #101816;
     --adr-list-line: rgba(111, 137, 127, 0.5);
     --adr-link-underline: rgba(94, 234, 212, 0.5);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html[data-wc-theme-default="system"]:not([data-wc-theme="light"]):not([data-theme="light"]):not(.light) .adr-page,
-    html[data-theme="system"]:not([data-wc-theme="light"]):not([data-theme="light"]):not(.light) .adr-page {
-      --adr-ink: #edf6f2;
-      --adr-muted: #b8c8c0;
-      --adr-line: #3a514b;
-      --adr-accent: #5eead4;
-      --adr-accent-2: #f2b47d;
-      --adr-soft: #17211f;
-      --adr-panel: #101816;
-      --adr-list-line: rgba(111, 137, 127, 0.5);
-      --adr-link-underline: rgba(94, 234, 212, 0.5);
-    }
   }
 
   .adr-page {
@@ -232,6 +216,11 @@
 
   .adr-authors strong {
     color: var(--adr-ink);
+  }
+
+  .adr-more {
+    margin-top: 16px;
+    color: var(--adr-muted);
   }
 
   .adr-item-title a {
@@ -479,6 +468,7 @@
             </span>
           </li>
         </ul>
+        <p class="adr-more">For the complete publication list, see my <a href="https://scholar.google.com/citations?user=ziDYtskAAAAJ&hl=it&oi=ao">Google Scholar profile</a>.</p>
       </section>
 
       <section class="adr-section" id="featured">
@@ -524,7 +514,7 @@
       <section class="adr-section" id="service">
         <h2>Teaching and Service</h2>
         <p>Teaching assistant for Deep Learning and Machine Learning courses serving 300+ students. Co-supervised 2 MSc and 4 BSc theses.</p>
-        <p>Reviewer for npj Digital Medicine, TMLR, IEEE Journal of Biomedical and Health Informatics (J-BHI), ACM IMWUT, and ICML, where I was recognized among the top 25% of reviewers.</p>
+        <p>Reviewer for npj Digital Medicine, ICML (top 25%), TMLR, J-BHI, and ACM IMWUT.</p>
       </section>
 
       <section class="adr-section" id="contact">
