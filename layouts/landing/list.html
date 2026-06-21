@@ -1,6 +1,8 @@
 {{ define "main" }}
 {{ if .IsHome }}
 {{ $photo := resources.Get "media/alvise-dei-rossi.jpg" }}
+{{ $sleepyLogo := resources.Get "media/sleepyland-logo-white.png" }}
+{{ $sleepyDemo := resources.Get "media/sleepyland-quickstart-results.gif" }}
 <style>
   :root {
     --adr-ink: #16201d;
@@ -240,33 +242,99 @@
     color: var(--adr-accent);
   }
 
-  .adr-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-  }
-
-  .adr-card {
+  .adr-spotlight {
     border: 1px solid var(--adr-line);
     border-radius: 8px;
-    padding: 18px;
     background: var(--adr-panel);
+    overflow: hidden;
   }
 
-  .adr-card h3 {
-    font-size: 1.02rem;
+  .adr-spotlight-media {
+    background: #111816;
+    padding: 18px;
+    border-bottom: 1px solid var(--adr-line);
+  }
+
+  .adr-sleepy-logo {
+    width: min(240px, 70%);
+    height: auto;
+    display: block;
+    margin: 0 0 16px;
+  }
+
+  .adr-demo {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: #0b1110;
+  }
+
+  .adr-spotlight-body {
+    padding: 22px;
+  }
+
+  .adr-kicker {
+    color: var(--adr-accent-2);
+    font-size: 0.88rem;
+    font-weight: 700;
     margin: 0 0 8px;
+  }
+
+  .adr-spotlight h3 {
+    font-size: 1.36rem;
+    margin: 0 0 12px;
     letter-spacing: 0;
   }
 
-  .adr-card h3 a {
+  .adr-feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+    list-style: none;
+    padding: 0;
+    margin: 18px 0;
+  }
+
+  .adr-feature-list li {
+    border-top: 1px solid var(--adr-list-line);
+    padding-top: 10px;
+    color: var(--adr-muted);
+    line-height: 1.5;
+  }
+
+  .adr-feature-list strong {
     color: var(--adr-ink);
   }
 
-  .adr-card p {
-    font-size: 0.96rem;
-    color: var(--adr-muted);
-    margin-bottom: 0;
+  .adr-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .adr-page .adr-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--adr-accent);
+    border-radius: 6px;
+    padding: 10px 13px;
+    color: var(--adr-ink);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .adr-page .adr-action:hover,
+  .adr-page .adr-action:focus-visible {
+    background: var(--adr-soft);
+  }
+
+  .adr-action svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
   }
 
   .adr-contact {
@@ -297,7 +365,7 @@
       width: 168px;
     }
 
-    .adr-grid {
+    .adr-feature-list {
       grid-template-columns: 1fr;
     }
   }
@@ -405,25 +473,32 @@
       </section>
 
       <section class="adr-section" id="projects">
-        <h2>Selected Projects</h2>
-        <div class="adr-grid">
-          <article class="adr-card">
-            <h3><a href="/projects/sleepyland/">SLEEPYLAND</a></h3>
-            <p>Open-source framework and model suite for fair evaluation of automatic sleep staging algorithms.</p>
-          </article>
-          <article class="adr-card">
-            <h3><a href="/projects/perceived-sleep-quality/">Perceived Sleep Quality Monitoring</a></h3>
-            <p>Wearable and self-report modeling for free-living sleep quality monitoring.</p>
-          </article>
-          <article class="adr-card">
-            <h3><a href="/projects/burnout-prediction/">Burnout Prediction</a></h3>
-            <p>Wearable trajectory modeling for burnout severity estimation and physiological risk monitoring.</p>
-          </article>
-          <article class="adr-card">
-            <h3><a href="/projects/naps/">NAPS</a></h3>
-            <p>Attention-based fusion of heterogeneous physiological signals for automatic sleep staging.</p>
-          </article>
-        </div>
+        <h2>Featured Project</h2>
+        <article class="adr-spotlight">
+          <div class="adr-spotlight-media">
+            {{ with $sleepyLogo }}<img class="adr-sleepy-logo" src="{{ .RelPermalink }}" alt="SLEEPYLAND">{{ end }}
+            {{ with $sleepyDemo }}<img class="adr-demo" src="{{ .RelPermalink }}" alt="SLEEPYLAND quickstart showing hypnograms, hypnodensity, and performance results" loading="lazy">{{ end }}
+          </div>
+          <div class="adr-spotlight-body">
+            <p class="adr-kicker">Open-source sleep staging toolkit</p>
+            <h3>SLEEPYLAND</h3>
+            <p>SLEEPYLAND is an open-source, open-weight toolkit for fair evaluation and local use of automatic sleep-staging models. It packages state-of-the-art algorithms and trained weights behind a zero-code web GUI, so users can run zero-shot sleep staging locally and inspect hypnograms, hypnodensities, metrics, and confusion matrices without writing code.</p>
+            <ul class="adr-feature-list">
+              <li><strong>Open source.</strong> Dockerized services, notebooks, GUI, data harmonization, and evaluation code are available on GitHub.</li>
+              <li><strong>Open weights.</strong> The repository includes trained model weights across U-Sleep, DeepResNet, and SleepTransformer variants.</li>
+              <li><strong>Local GUI.</strong> Users can launch a browser interface at localhost and keep EDF/PSG data on their own machine.</li>
+              <li><strong>Zero-shot results.</strong> The workflow supports prediction/evaluation with visual hypnograms, hypnodensities, and performance summaries.</li>
+            </ul>
+            <div class="adr-actions">
+              <a class="adr-action" href="https://github.com/biomedical-signal-processing/sleepyland/tree/main">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.98c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"></path>
+                </svg>
+                GitHub repository
+              </a>
+            </div>
+          </div>
+        </article>
       </section>
 
       <section class="adr-section" id="service">
