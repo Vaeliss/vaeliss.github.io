@@ -1,0 +1,416 @@
+{{ define "main" }}
+{{ $photo := resources.Get "media/alvise-dei-rossi.jpg" }}
+<style>
+  :root {
+    --adr-ink: #16201d;
+    --adr-muted: #647067;
+    --adr-line: #d8e0da;
+    --adr-accent: #0f766e;
+    --adr-accent-2: #9a4f2b;
+    --adr-soft: #f6f7f4;
+    --adr-panel: #ffffff;
+  }
+
+  .adr-page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+    color: var(--adr-ink);
+  }
+
+  .adr-shell {
+    display: grid;
+    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+
+  .adr-profile {
+    position: sticky;
+    top: 96px;
+    padding-right: 28px;
+    border-right: 1px solid var(--adr-line);
+  }
+
+  .adr-photo {
+    width: 190px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 24%;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 24px;
+    border: 1px solid var(--adr-line);
+  }
+
+  .adr-name {
+    font-size: 1.55rem;
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0 0 10px;
+    letter-spacing: 0;
+  }
+
+  .adr-role {
+    margin: 0 0 18px;
+    color: var(--adr-muted);
+    line-height: 1.45;
+  }
+
+  .adr-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    color: var(--adr-muted);
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .adr-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .adr-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--adr-line);
+    border-radius: 50%;
+    color: var(--adr-ink);
+    background: var(--adr-panel);
+    transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .adr-link:hover,
+  .adr-link:focus-visible {
+    color: var(--adr-accent);
+    border-color: var(--adr-accent);
+    transform: translateY(-1px);
+  }
+
+  .adr-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .adr-main {
+    min-width: 0;
+  }
+
+  .adr-section {
+    padding: 0 0 44px;
+    margin: 0 0 42px;
+    border-bottom: 1px solid var(--adr-line);
+  }
+
+  .adr-section:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .adr-section h1,
+  .adr-section h2 {
+    font-size: 1.72rem;
+    line-height: 1.2;
+    margin: 0 0 18px;
+    letter-spacing: 0;
+  }
+
+  .adr-lede {
+    font-size: 1.08rem;
+    line-height: 1.75;
+    margin: 0 0 16px;
+  }
+
+  .adr-section p {
+    line-height: 1.72;
+    margin: 0 0 14px;
+  }
+
+  .adr-muted {
+    color: var(--adr-muted);
+  }
+
+  .adr-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .adr-list li {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 18px;
+    padding: 11px 0;
+    border-top: 1px solid rgba(216, 224, 218, 0.75);
+    line-height: 1.55;
+  }
+
+  .adr-tag {
+    color: var(--adr-accent-2);
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+
+  .adr-item-title {
+    font-weight: 700;
+  }
+
+  .adr-item-title a {
+    color: var(--adr-ink);
+    text-decoration-color: rgba(15, 118, 110, 0.35);
+    text-underline-offset: 3px;
+  }
+
+  .adr-item-title a:hover {
+    color: var(--adr-accent);
+  }
+
+  .adr-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .adr-card {
+    border: 1px solid var(--adr-line);
+    border-radius: 8px;
+    padding: 18px;
+    background: var(--adr-panel);
+  }
+
+  .adr-card h3 {
+    font-size: 1.02rem;
+    margin: 0 0 8px;
+    letter-spacing: 0;
+  }
+
+  .adr-card p {
+    font-size: 0.96rem;
+    color: var(--adr-muted);
+    margin-bottom: 0;
+  }
+
+  .adr-contact {
+    border: 1px solid var(--adr-line);
+    border-radius: 8px;
+    background: var(--adr-soft);
+    padding: 22px;
+  }
+
+  .adr-form {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .adr-form label {
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .adr-form input,
+  .adr-form textarea {
+    width: 100%;
+    border: 1px solid var(--adr-line);
+    border-radius: 6px;
+    padding: 11px 12px;
+    background: #fff;
+    color: var(--adr-ink);
+  }
+
+  .adr-form textarea {
+    min-height: 130px;
+    resize: vertical;
+  }
+
+  .adr-form button {
+    justify-self: start;
+    border: 0;
+    border-radius: 6px;
+    padding: 11px 16px;
+    background: var(--adr-accent);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .adr-form button:hover,
+  .adr-form button:focus-visible {
+    background: #115e59;
+  }
+
+  @media (max-width: 860px) {
+    .adr-page {
+      padding: 36px 20px 64px;
+    }
+
+    .adr-shell {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .adr-profile {
+      position: static;
+      border-right: 0;
+      border-bottom: 1px solid var(--adr-line);
+      padding: 0 0 28px;
+    }
+
+    .adr-photo {
+      width: 168px;
+    }
+
+    .adr-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .adr-list li {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+</style>
+
+<main class="adr-page">
+  <div class="adr-shell">
+    <aside class="adr-profile" aria-label="Profile">
+      {{ with $photo }}<img class="adr-photo" src="{{ .RelPermalink }}" alt="Alvise Dei Rossi">{{ end }}
+      <h1 class="adr-name">Alvise Dei Rossi</h1>
+      <p class="adr-role">PhD Candidate in Informatics<br>Machine learning for physiological time series</p>
+      <ul class="adr-meta">
+        <li>Universita della Svizzera Italiana</li>
+        <li>SUPSI</li>
+        <li>Lugano, Switzerland</li>
+      </ul>
+      <nav class="adr-links" aria-label="Profile links">
+        <a class="adr-link" href="mailto:alvise.deirossi@gmail.com" aria-label="Email Alvise Dei Rossi">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="m3 7 9 6 9-6"></path>
+          </svg>
+        </a>
+        <a class="adr-link" href="https://github.com/Vaeliss" aria-label="GitHub">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.98c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"></path>
+          </svg>
+        </a>
+        <a class="adr-link" href="https://www.linkedin.com/in/alvise-dei-rossi-a7b76b19a" aria-label="LinkedIn">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.54V9H7.1v11.45ZM22.22 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"></path>
+          </svg>
+        </a>
+        <a class="adr-link" href="https://scholar.google.com/citations?user=ziDYtskAAAAJ&hl=it&oi=ao" aria-label="Google Scholar">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm0 14.25L5.18 13.5v2.42C5.18 18.72 8.23 21 12 21s6.82-2.28 6.82-5.08V13.5L12 17.25Z"></path>
+          </svg>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="adr-main">
+      <section class="adr-section" id="about">
+        <h2>About</h2>
+        <p class="adr-lede">I am a PhD candidate working on robust machine learning for physiological and health data, with sleep as the main application domain.</p>
+        <p>My research studies models under real-world heterogeneity: subject variability, device differences, dataset shifts, multimodal sensing constraints, and noisy labels. The broader goal is to build health AI systems that can be evaluated fairly and transferred across data sources.</p>
+        <p>I am interested in future R&D roles around wearable sensing, physiological time series, robust generalization, multimodal modeling, and research-to-code execution.</p>
+      </section>
+
+      <section class="adr-section" id="news">
+        <h2>News</h2>
+        <ul class="adr-list">
+          <li><span class="adr-tag">2026</span><span>Preparing a public personal website for post-PhD academic and industrial R&D applications.</span></li>
+          <li><span class="adr-tag">2025</span><span>Travel grant for EurIPS 2025, MMRL4H Workshop.</span></li>
+          <li><span class="adr-tag">2023-present</span><span>PhD research on robust physiological signal modeling at USI and SUPSI.</span></li>
+        </ul>
+      </section>
+
+      <section class="adr-section" id="publications">
+        <h2>Selected Publications</h2>
+        <ul class="adr-list">
+          <li><span class="adr-tag">npj Digital Medicine</span><span><span class="adr-item-title">SLEEPYLAND: an open-source framework and model suite for fair evaluation of automatic sleep staging algorithms.</span> First-author peer-reviewed work.</span></li>
+          <li><span class="adr-tag">Wearables</span><span><span class="adr-item-title">Unobtrusive perceived sleep quality monitoring in free-living conditions.</span> Wearable and self-report modeling with subject-wise validation.</span></li>
+          <li><span class="adr-tag">Multimodal</span><span><span class="adr-item-title">NAPS: attention-based fusion of heterogeneous physiological signals.</span> Adaptive aggregation for variable sensor configurations.</span></li>
+          <li><span class="adr-tag">Health AI</span><span><span class="adr-item-title">Burnout prediction using passive physiological data and wearable trajectories.</span> Physiological risk monitoring for work-related stress disorder research.</span></li>
+        </ul>
+      </section>
+
+      <section class="adr-section" id="experience">
+        <h2>Research Experience</h2>
+        <ul class="adr-list">
+          <li><span class="adr-tag">2023-present</span><span><span class="adr-item-title">PhD Candidate, USI / SUPSI.</span> Robust generalization for physiological signals, large-scale sleep staging, wearable monitoring, subjective sleep quality, burnout detection, and multimodal signal fusion.</span></li>
+          <li><span class="adr-tag">2022-2023</span><span><span class="adr-item-title">Postgraduate Researcher, University of Padua.</span> Reinforcement learning for artificial pancreas control with SARSA(lambda) agents.</span></li>
+        </ul>
+      </section>
+
+      <section class="adr-section" id="projects">
+        <h2>Selected Projects</h2>
+        <div class="adr-grid">
+          <article class="adr-card">
+            <h3><a href="/projects/sleepyland/">SLEEPYLAND</a></h3>
+            <p>Open-source framework and model suite for fair evaluation of automatic sleep staging algorithms.</p>
+          </article>
+          <article class="adr-card">
+            <h3><a href="/projects/perceived-sleep-quality/">Perceived Sleep Quality Monitoring</a></h3>
+            <p>Wearable and self-report modeling for free-living sleep quality monitoring.</p>
+          </article>
+          <article class="adr-card">
+            <h3><a href="/projects/burnout-prediction/">Burnout Prediction</a></h3>
+            <p>Wearable trajectory modeling for burnout severity estimation and physiological risk monitoring.</p>
+          </article>
+          <article class="adr-card">
+            <h3><a href="/projects/naps/">NAPS</a></h3>
+            <p>Attention-based fusion of heterogeneous physiological signals for automatic sleep staging.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="adr-section" id="service">
+        <h2>Teaching and Service</h2>
+        <p>Teaching assistant for Deep Learning and Machine Learning courses serving 300+ students. Co-supervised 2 MSc and 4 BSc theses.</p>
+        <p>Reviewer for npj Digital Medicine, ICML, IEEE BHI, ACM IMWUT, and additional journals and conferences.</p>
+      </section>
+
+      <section class="adr-section" id="contact">
+        <h2>Contact</h2>
+        <div class="adr-contact">
+          <p>For professional contact, write to <a href="mailto:alvise.deirossi@gmail.com">alvise.deirossi@gmail.com</a> or use the quick message form below.</p>
+          <form class="adr-form" id="adr-contact-form">
+            <label for="adr-name">Name</label>
+            <input id="adr-name" name="name" autocomplete="name" required>
+            <label for="adr-email">Email</label>
+            <input id="adr-email" name="email" type="email" autocomplete="email" required>
+            <label for="adr-message">Message</label>
+            <textarea id="adr-message" name="message" required></textarea>
+            <button type="submit">Send message</button>
+          </form>
+          <p class="adr-muted">This opens your email client with a prefilled message. A hosted form endpoint can be added later if needed.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script>
+  (function () {
+    var form = document.getElementById('adr-contact-form');
+    if (!form) return;
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var name = document.getElementById('adr-name').value.trim();
+      var email = document.getElementById('adr-email').value.trim();
+      var message = document.getElementById('adr-message').value.trim();
+      var subject = 'Website message from ' + (name || 'visitor');
+      var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
+      window.location.href = 'mailto:alvise.deirossi@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  })();
+</script>
+{{ end }}
