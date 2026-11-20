@@ -129,7 +129,7 @@ hugoblox:
 
   repository:
     enable: false
-    url: "https://github.com/Vaeliss/job_applications_website"
+    url: "https://github.com/Vaeliss/vaeliss.github.io"
     branch: main
     content_dir: content
 

@@ -16,4 +16,4 @@ SLEEPYLAND is an open-source framework and open-weight model suite for evaluatin
 
 The project focuses on fair evaluation under dataset heterogeneity, model comparison, reusable workflows, and practical release engineering. It includes deep learning models such as U-Nets, recurrent models, Transformers, and ensembles, with code and evaluation workflows designed for reuse.
 
-Current CV baseline reports 2.5k+ DockerHub downloads, 30+ GitHub stars, and a first-author peer-reviewed publication in npj Digital Medicine.
+SLEEPYLAND is described in a first-author publication in npj Digital Medicine.

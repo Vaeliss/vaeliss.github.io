@@ -21,4 +21,4 @@ links: []
 projects: []
 ---
 
-Selected first-author work. Full citation metadata and BibTeX will be added later.
+First-author work.

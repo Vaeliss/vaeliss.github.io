@@ -20,4 +20,4 @@ links: []
 projects: []
 ---
 
-Selected first-author publication. Full citation metadata and BibTeX will be added later.
+Selected first-author publication.

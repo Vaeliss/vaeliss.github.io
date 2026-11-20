@@ -7,7 +7,7 @@ sections:
   - block: collection
     content:
       title: Selected Publications
-      text: Selected first-author and co-authored work. The full publication list and BibTeX import will be added later.
+      text: Selected first-author and co-authored work.
       filters:
         folders:
           - publications

@@ -1,4 +1,4 @@
-module github.com/Vaeliss/job_applications_website
+module github.com/Vaeliss/vaeliss.github.io
 
 go 1.19
 
